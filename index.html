@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>출발선 — 대한민국에서 100년</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-stage="baby">
+<div id="app">
+
+  <!-- 타이틀 -->
+  <section id="scr-title" class="scr on">
+    <div class="title-box">
+      <div class="t-float" id="t-float" aria-hidden="true"></div>
+      <div class="t-dice" aria-hidden="true"><span>⚂</span><span>⚅</span><span>⚀</span></div>
+      <h1 class="t-logo"><span>출</span><span>발</span><span>선</span></h1>
+      <p class="sub">대한민국에서 태어나 100살까지.<br>주사위가 정한 출발선에서, 당신은 어떤 삶을 살게 될까요.</p>
+      <div class="t-stage" aria-hidden="true">
+        <div class="t-age"><b id="t-age">0</b>세 <span id="t-stg">유아기</span></div>
+        <div class="t-track"><div class="t-fill" id="t-fill"></div><div class="t-ms" id="t-ms"></div><div class="t-runner" id="t-runner"></div></div>
+        <div class="t-ends"><span>출발선</span><span>100세</span></div>
+      </div>
+      <div class="title-btns">
+        <button id="btn-continue" class="btn big" hidden>이어하기</button>
+        <button id="btn-new" class="btn big primary">새 인생 시작</button>
+      </div>
+      <button id="btn-snd" class="btn small ghost">🔈 음악 켜기</button>
+      <p class="fine">진행 상황은 이 브라우저에 자동 저장됩니다.</p>
+    </div>
+  </section>
+
+  <!-- 캐릭터 생성 -->
+  <section id="scr-create" class="scr">
+    <div class="create-box">
+      <h2>출발선 뽑기</h2>
+      <p class="sub">집안과 능력은 고를 수 없습니다. 성별만 고르고, 주사위는 마음에 들 때까지 굴릴 수 있습니다.</p>
+      <div class="seg" id="sex-pick" role="group" aria-label="성별 선택"><button data-sex="M">남성</button><button data-sex="F">여성</button><button data-sex="">주사위에 맡김</button></div>
+      <div class="seg" id="diff-pick" role="group" aria-label="난이도 선택"><button data-diff="2">축복 모드</button><button data-diff="1">쉬움</button><button data-diff="0">보통</button><button data-diff="-1">어려움</button></div>
+      <p class="fine" id="diff-desc" style="text-align:center;margin:6px 0 0"></p>
+      <div class="dice-row" id="dice-row"></div>
+      <div id="create-body" class="create-body"></div>
+      <div class="create-btns">
+        <button id="btn-reroll" class="btn">다시 굴리기</button>
+        <button id="btn-start" class="btn primary">이 인생으로 시작</button>
+      </div>
+      <p class="fine" id="create-seed"></p>
+    </div>
+  </section>
+
+  <!-- 본 게임 -->
+  <section id="scr-game" class="scr">
+    <div id="main-col">
+    <header id="status"></header>
+    <main id="log" aria-live="polite"></main>
+    <footer id="bottom">
+      <div id="dec" hidden></div>
+      <div id="actions">
+        <button id="btn-next" class="btn primary grow">다음 해 ▶</button>
+        <button id="btn-year" class="btn" title="남은 달을 한꺼번에 넘깁니다" hidden>1년 ⏭</button>
+        <button id="btn-side" class="btn" title="행동·투자">🧭</button>
+        <button id="btn-auto" class="btn" title="선택지가 나올 때까지 자동으로 넘깁니다 (속도는 설정에서)">자동 ⏩</button>
+        <button id="btn-reunion" class="btn" title="친구들">👥</button>
+        <button id="btn-graph" class="btn" title="인생 그래프">📈</button>
+        <button id="btn-set" class="btn" title="설정">⚙️</button>
+      </div>
+    </footer>
+    </div>
+    <aside id="side"><div class="side-h"><b id="side-t">이번 달</b><button id="side-x" aria-label="닫기">✕</button></div><div id="side-body"></div></aside>
+  </section>
+
+  <!-- 엔딩 -->
+  <section id="scr-end" class="scr"><div id="end-body" class="end-box"></div></section>
+</div>
+
+<div id="modal" hidden><div class="modal-card"><button class="modal-x" id="modal-x" aria-label="닫기">✕</button><div id="modal-body"></div></div></div>
+<div id="fx" hidden></div>
+
+<script src="js/data.js"></script>
+<script src="js/text.js"></script>
+<script src="js/core.js"></script>
+<script src="js/decisions1.js"></script>
+<script src="js/decisions2.js"></script>
+<script src="js/life.js"></script>
+<script src="js/quarter.js"></script>
+<script src="js/extras.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
